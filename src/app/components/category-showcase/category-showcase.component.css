@@ -1,0 +1,183 @@
+.glass-dark {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    }
+/* ==== SECCIÓN PRINCIPAL ==== */
+.featured-collection {
+  padding-top: 0.2rem;           /* py-16 */
+  padding-bottom: 1rem;
+  padding-left: 1rem;          /* px-4 */
+  padding-right: 1rem;
+  background-color: rgba(var(--color-secondary), 0.3); /* bg-secondary/30 */
+}
+
+@media (min-width: 640px) {
+  .featured-collection {
+          /* sm:py-24 */
+    padding-bottom: 1rem;
+  }
+}
+
+/* ==== CONTENEDOR CENTRAL ==== */
+.featured-collection .container {
+  max-width: 80rem;            /* max-w-7xl */
+  margin-left: auto;           /* mx-auto */
+  margin-right: auto;
+}
+
+/* ==== ENCABEZADO ==== */
+.featured-collection .section-header {
+  text-align: center;          /* text-center */
+  margin-bottom: 3rem;         /* mb-12 */
+}
+
+@media (min-width: 640px) {
+  .featured-collection .section-header {
+    margin-bottom: 4rem;       /* sm:mb-16 */
+  }
+}
+
+.featured-collection h2 {
+  font-size: 1.875rem;         /* text-3xl */
+  font-weight: 300;            /* font-light */
+  margin-bottom: 1rem;         /* mb-4 */
+  line-height: 1.2;
+}
+
+@media (min-width: 640px) {
+  .featured-collection h2 {
+    font-size: 2.25rem;        /* sm:text-4xl */
+  }
+}
+
+@media (min-width: 768px) {
+  .featured-collection h2 {
+    font-size: 3rem;           /* md:text-5xl */
+  }
+}
+
+.featured-collection h2 .highlight {
+  font-weight: 600;            /* font-semibold */
+  color: var(--color-primary); /* text-primary */
+}
+
+.featured-collection p {
+  color: var(--color-muted-foreground); /* text-muted-foreground */
+  font-size: 1rem;             /* text-base */
+  max-width: 42rem;            /* max-w-2xl */
+  margin: 0 auto;              /* mx-auto */
+  line-height: 1.75;           /* leading-relaxed */
+}
+
+@media (min-width: 640px) {
+  .featured-collection p {
+    font-size: 1.125rem;       /* sm:text-lg */
+  }
+}
+
+/* ==== REJILLA DE CATEGORÍAS ==== */
+.category-grid {
+  display: grid;               /* grid */
+  grid-template-columns: 1fr;  /* grid-cols-1 */
+  gap: 1.5rem;                 /* gap-6 */
+}
+
+@media (min-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(3, 1fr); /* lg:grid-cols-3 */
+  }
+}
+
+/* ==== TARJETAS DE CATEGORÍAS ==== */
+.category-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;       /* rounded-3xl */
+  cursor: pointer;
+}
+
+.category-card .image-wrapper {
+  position: relative;
+  aspect-ratio: 4 / 5;         /* aspect-[4/5] */
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .category-card .image-wrapper {
+    aspect-ratio: auto;
+    height: 400px;             /* lg:h-[400px] */
+  }
+}
+
+.category-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease; /* duration-700 */
+}
+
+.category-card:hover img {
+  transform: scale(1.1);       /* group-hover:scale-110 */
+}
+
+/* ==== GRADIENTE OSCURO SOBRE LA IMAGEN ==== */
+.category-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+}
+
+/* ==== CONTENIDO DE CADA CATEGORÍA ==== */
+.category-card .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;             /* p-6 */
+}
+
+@media (min-width: 640px) {
+  .category-card .content {
+    padding: 2rem;             /* sm:p-8 */
+  }
+}
+
+/* ==== EFECTO GLASSMORPHISM ==== */
+.glass-dark {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  border-radius: 1rem;         /* rounded-2xl */
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.category-card .glass-dark h3 {
+  color: white;
+  font-size: 1.5rem;           /* text-2xl */
+  font-weight: 300;            /* font-light */
+  margin-bottom: 0.5rem;       /* mb-2 */
+}
+
+@media (min-width: 640px) {
+  .category-card .glass-dark h3 {
+    font-size: 1.875rem;       /* sm:text-3xl */
+  }
+}
+
+.category-card .glass-dark p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;         /* text-sm */
+}
+
+@media (min-width: 640px) {
+  .category-card .glass-dark p {
+    font-size: 1rem;           /* sm:text-base */
+  }
+}

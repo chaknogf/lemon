@@ -1,0 +1,11 @@
+.accordion-content {
+  transition: max-height 0.3s ease;
+}
+
+.chevron {
+  pointer-events: none;
+}
+
+.rotate-180 {
+  transform: rotate(180deg);
+}
