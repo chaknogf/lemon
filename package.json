@@ -1,6 +1,6 @@
 {
-  "name": "lemon",
-  "version": "0.0.0",
+  "name": "cloteshop",
+  "version": "0.0.2",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -17,10 +17,7 @@
     "@angular/platform-browser": "^19.2.0",
     "@angular/platform-browser-dynamic": "^19.2.0",
     "@angular/router": "^19.2.0",
-<<<<<<< HEAD
     "@angular/service-worker": "^19.2.0",
-=======
->>>>>>> fd96447 (Primer commit: proyecto Lemon inicial)
     "@tailwindcss/postcss": "^4.1.14",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
