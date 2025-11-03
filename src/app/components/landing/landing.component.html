@@ -1,0 +1,206 @@
+<header class="header-glass">
+  <div class="header-container">
+    <div class="header-inner">
+
+      <!-- Logo -->
+      <div class="logo">
+        <div class="logo-icon" [innerHTML]="icons['clothe']"></div>
+        <span class="logo-text">ClotheShop</span>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="nav-desktop">
+        <a href="#new">Nuevos Ingresos</a>
+        <a href="#clothing">Ropa</a>
+        <a href="#accessories">Accesorios</a>
+        <a href="#sale" class="sale-link">Novedades</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="actions">
+        <button class="icon-btn cart">
+          <span [innerHTML]="icons['bag']"></span>
+          <span class="badge">0</span>
+        </button>
+        <button class="icon-btn menu-btn" (click)="toggleMenu()">
+          <span [innerHTML]="icons['menu']"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <nav *ngIf="isMenuOpen" class="nav-mobile">
+      <a href="#new">Nuevos Ingresos</a>
+      <a href="#clothing">Ropa</a>
+      <a href="#accessories">Accesorios</a>
+      <a href="#sale" class="sale-link">Novedades</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero-magazine">
+  <div class="hero-content">
+    <h1>
+      <span class="titulo1">Clothe</span><br />
+      <span class="titulo2">SHOP</span>
+    </h1>
+
+
+  </div>
+
+  <div class="hero-bg">
+    <img src="assets/hero4.avif" alt="Moda contemporánea" />
+    <div class="hero-overlay"></div>
+  </div>
+</section>
+
+<!-- FEATURED PRODUCTS -->
+<section class="featured-collection">
+  <div class="max-w-7xl mx-auto">
+    <div class="section-header">
+      <h2>Colecciones <span>Destacadas</span></h2>
+      <p>Selecciones exclusivas que fusionan elegancia, comodidad y modernidad.</p>
+    </div>
+
+    <div class="product-grid">
+      <ng-container *ngFor="let product of products">
+        <div class="product-card glass">
+          <div class="image-wrapper">
+            <img [src]="product.image || '/placeholder.svg'" [alt]="product.name" />
+            <div class="overlay-gradient"></div>
+            <div class="quick-actions">
+              <button class="btn-icon">❤️</button>
+              <button class="btn-icon">🛒</button>
+            </div>
+            <div class="category-badge">{{ product.category }}</div>
+          </div>
+
+          <div class="product-info">
+            <h3>{{ product.name }}</h3>
+            <p class="price">{{ product.price }}</p>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+
+    <div class="text-center mt-12">
+      <button class="btn-view-all">Ver Todos los Productos</button>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORY SECTION -->
+<section class="featured-collection">
+  <div class="container">
+    <div class="section-header">
+      <h2>
+        Compra por <span class="highlight">Categoría</span>
+      </h2>
+      <p>
+        Descubre colecciones únicas, creadas con esmero para acompañarte en cada momento especial.
+      </p>
+    </div>
+
+    <div class="category-grid">
+      <div class="category-card glass" *ngFor="let category of categories">
+        <div class="image-wrapper">
+          <img [src]="category.image" [alt]="category.name" />
+          <div class="overlay"></div>
+          <div class="content glass-dark">
+            <h3>{{ category.name }}</h3>
+            <p>{{ category.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <div class="newsletter-container">
+    <div class="newsletter-glass">
+      <div class="newsletter-header">
+        <h2>
+          Mantente <span class="highlight">Fresh</span>
+        </h2>
+        <p>
+          Suscríbete a nuestro boletín para recibir ofertas exclusivas, consejos de estilo y acceso anticipado a nuestras últimas colecciones.
+        </p>
+      </div>
+
+      <form (submit)="handleSubmit($event)" class="newsletter-form">
+        <input
+          type="email"
+          placeholder="Ingresa tu correo"
+          [(ngModel)]="email"
+          name="email"
+          required
+          class="input-email"
+        />
+        <button type="submit" class="btn-primary">Subscríbete</button>
+      </form>
+
+      <p class="newsletter-note">
+        Al suscribirte, aceptas nuestra política de privacidad y recibir novedades y actualizaciones.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <div class="logo-circle"><span>CSh</span></div>
+          <span class="brand-name">ClotheShop</span>
+        </div>
+        <p class="brand-description">
+          Fresh, vibrant fashion for la mujer moderna que vive con estilo.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h3>Shop</h3>
+        <ul>
+          <li><a href="#">New Arrivals</a></li>
+          <li><a href="#">Clothing</a></li>
+          <li><a href="#">Accessories</a></li>
+          <li><a href="#">Sale</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links">
+        <h3>Help</h3>
+        <ul>
+          <li><a href="#">Customer Service</a></li>
+          <li><a href="#">Shipping & Returns</a></li>
+          <li><a href="#">Size Guide</a></li>
+          <li><a href="#">FAQs</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-social">
+        <h3>Connect</h3>
+        <div class="socials">
+          <a href="#"><i class="icon-instagram"></i></a>
+          <a href="#"><i class="icon-facebook"></i></a>
+          <a href="#"><i class="icon-twitter"></i></a>
+        </div>
+        <p class="social-note">Síguenos para inspiración diaria 🌸</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 ClotheShop - Todos los derechos reservados.</p>
+      <div class="bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+        <a href="#">Github: Código Fantasma</a>
+      </div>
+    </div>
+  </div>
+</footer>

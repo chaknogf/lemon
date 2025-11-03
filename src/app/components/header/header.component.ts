@@ -22,27 +22,19 @@ export class HeaderComponent implements OnInit {
   // iconos
   icons: { [key: string]: any } = {};
 
-  private sanitizarSvg(svg: string): SafeHtml {
-    return this.sanitizer.bypassSecurityTrustHtml(svg);
-  }
 
-  logo: SafeHtml = lemon1;
-  heart: SafeHtml = heart;
-  search: SafeHtml = search;
-  bag: SafeHtml = bag;
-  menu: SafeHtml = menu;
 
   constructor(
-    private sanitizer: DomSanitizer,
     private iconService: IconService,
   ) {
 
     this.icons = {
-      lemon: this.sanitizarSvg(lemon1),
-      heart: this.sanitizarSvg(heart),
-      search: this.sanitizarSvg(search),
-      bag: this.sanitizarSvg(bag),
-      menu: this.sanitizarSvg(menu),
+      lemon: this.iconService.getIcon('lemon1'),
+      heart: this.iconService.getIcon('heart'),
+      search: this.iconService.getIcon('search'),
+      bag: this.iconService.getIcon('bag'),
+      menu: this.iconService.getIcon('menu'),
+      clothe: this.iconService.getIcon('clothe')
     }
 
   }

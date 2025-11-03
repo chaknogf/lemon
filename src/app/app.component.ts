@@ -5,17 +5,14 @@ import { FeaturedCollectionComponent } from './components/featured-collection/fe
 import { CategoryShowcaseComponent } from './components/category-showcase/category-showcase.component';
 import { NewsletterComponent } from './components/newsletter/newsletter.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LandingComponent } from "./components/landing/landing.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    HeaderComponent,
-    HeroComponent,
-    FeaturedCollectionComponent,
-    CategoryShowcaseComponent,
-    NewsletterComponent,
-    FooterComponent
+
+    LandingComponent
   ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
